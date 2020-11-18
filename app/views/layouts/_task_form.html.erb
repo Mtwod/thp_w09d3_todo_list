@@ -2,8 +2,8 @@
 <div class="container">
 
   <div class="row ml-3">
-      <div class="offset-md-3 col-md-6 offset-md-3">
-          <%= form_with model: task, class: "form", id: "contact-form"  do |f| %>
+    <div class="offset-md-3 col-md-6 offset-md-3">
+        <%= form_with model: task, class: "form", id: "contact-form"  do |f| %>
               <div class="form-group">
                   <%= f.label "Task", class: "form-label" %>
                   <%= f.text_field :title, class: "form-control", placeholder: "Buy burgers" %>
@@ -24,3 +24,4 @@
           <%end%>
       </div>
   </div>
+</div>

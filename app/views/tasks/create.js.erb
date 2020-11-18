@@ -1,0 +1,3 @@
+alert("The task has been created");
+
+document.getElementById("category-<%= @category.id %>").insertAdjacentHTML("beforeend", "<li> <%= j render 'tasks/task', task: @task %> </li>");
