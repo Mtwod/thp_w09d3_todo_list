@@ -44,7 +44,7 @@ before_action :authenticate_user!
   private
 
   def task_params
-    params.permit(:title, :deadline, :description)
+    params.require(:task).permit(:title, :deadline, :description)
   end
 
   def category_params
