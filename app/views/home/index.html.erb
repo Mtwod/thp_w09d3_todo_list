@@ -9,7 +9,7 @@
       <div class="card">
         <ul id="category-<%= category.id %>">
           <% category.tasks.each do |task|  %>
-            <li>
+            <li id="task-<%= task.id %>">
               <%= render 'tasks/task', task: task %>
             </li>
           <% end %>

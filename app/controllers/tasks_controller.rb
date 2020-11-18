@@ -44,7 +44,13 @@ before_action :authenticate_user!
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to root_path
+    respond_to do |format|
+      format.html do 
+        flash[:notice] = "Task deleted."
+        redirect_to root_path
+      end
+      format.js { }
+    end
   end
 
 
