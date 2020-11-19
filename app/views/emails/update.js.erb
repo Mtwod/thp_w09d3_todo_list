@@ -7,3 +7,6 @@
     document.getElementById("email-<%= @email.id %>").classList.add("font-weight-bold");
   }
 <% end %>
+
+document.getElementById("mail-content").innerHTML = "";
+document.getElementById("mail-content").insertAdjacentHTML("afterbegin", "<%= j render 'email_content', email: @email %>");

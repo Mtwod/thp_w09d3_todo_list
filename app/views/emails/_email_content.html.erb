@@ -4,7 +4,7 @@
     <p class="card-text"><%= email.body %></p>
     <div class="row">
       <%= button_to "Delete", email, class:"btn btn-outline-danger ml-4 mr-1", method: 'delete', remote: true, data: {confirm: "Are you sure ??"} %>
-      <%= button_to "#{ email.read ? 'Mark as unread' : 'Marks as read' }", email, class:"btn btn-outline-info mx-1", method: 'patch', remote: true %>
+      <%= button_to "#{ email.read ? 'Mark as unread' : 'Marks as read' }", email, class:"btn btn-outline-info mx-1", id:"email-read-btn-#{email.id}", method: 'patch', remote: true %>
     </div>
   </div>
 </div>
