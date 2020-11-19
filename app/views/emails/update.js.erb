@@ -1,0 +1,9 @@
+<% if @email.read %>
+  if (document.getElementById("email-<%= @email.id %>").classList.contains("font-weight-bold")) { 
+    document.getElementById("email-<%= @email.id %>").classList.remove("font-weight-bold");
+  }
+<% else %>
+  if (document.getElementById("email-<%= @email.id %>").classList.contains("font-weight-bold")) { ; } else {
+    document.getElementById("email-<%= @email.id %>").classList.add("font-weight-bold");
+  }
+<% end %>

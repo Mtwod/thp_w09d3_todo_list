@@ -30,10 +30,14 @@ class EmailsController < ApplicationController
       format.html { }
       format.js { }
     end
+  end
 
-    def update
-      @email = Email.fin(params[:id])
-      respond_to
+  def update
+    @email = Email.find(params[:id])
+    @email.read ? @email.update(read: false) : @email.update(read:true)
+    respond_to do |format|
+      format.html { }
+      format.js { }
     end
   end
     
