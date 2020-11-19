@@ -1,0 +1,6 @@
+for (i = 0; i < document.getElementById("mail-content").childNodes.length; i++) {
+  console.log(document.getElementById("mail-content").childNodes[i]);
+  document.getElementById("mail-content").childNodes[i].remove();
+}
+
+document.getElementById("mail-content").insertAdjacentHTML("afterbegin", "<%= j render 'email_content', email: @email %>");

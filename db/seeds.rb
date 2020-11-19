@@ -17,3 +17,9 @@ require 'faker'
     my_task.save
   end
 end
+
+3.times do
+  email_object = Faker::Games::Zelda.game
+  email_body = Faker::Movies::PrincessBride.quote
+  @email = Email.create(object: email_object, body: email_body)
+end

@@ -1,0 +1,29 @@
+<div class="container" >
+  
+  <%= button_to  "Receive email", emails_path, class: "btn btn-primary", method: 'post', remote: true %>
+
+  <div class="p-1 box my-3">
+    <div class="row" >
+      <div class="col-lg-4 pr-1" >
+        <p class="list-group-item"> Emails list </p>
+      </div>
+      <div class="col-lg-8 pl-1" >
+        <p class="list-group-item"> Mail content </p>
+      </div>
+    </div>
+
+    <div class="row" >
+      <div class="col-lg-4 pr-1" >
+        <div id="mail-list" class="list-group">
+          <% @emails.each do |email| %>
+            <%= render 'email_list_element', email: email %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-lg-8 pl-1" >
+        <div id="mail-content" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
