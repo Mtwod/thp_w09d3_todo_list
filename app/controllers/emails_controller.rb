@@ -30,4 +30,16 @@ class EmailsController < ApplicationController
       format.js { }
     end
   end
+    
+  def destroy
+    @email = Email.find(params[:id])
+    @email.destroy
+    respond_to do |format|
+      format.html do
+        flash[:success] = "Email n°#{@email.id} deleted successfully"
+        redirect_to root_path
+      end
+      format.js { }
+    end
+  end
 end

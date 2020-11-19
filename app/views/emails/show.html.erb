@@ -1,1 +1,4 @@
-<%= render 'email_content', email: @email %>
+<div class="container" >
+  <h3>Email n°<%= @email.id %> : </h3>
+  <%= render 'email_content', email: @email %>
+</div>
