@@ -1,13 +1,13 @@
 class EmailsController < ApplicationController
   def index
-    @emails = Email.all
+    @emails = Email.all.sort
     @email = Email.new()
   end
 
   def create
     email_object = Faker::Games::Zelda.game
     email_body = Faker::Movies::PrincessBride.quote
-    @email = Email.new(object: email_object, body: email_body)
+    @email = Email.new(object: email_object, body: email_body, read: false)
 
     if @email.save
       respond_to do |format|
@@ -25,9 +25,15 @@ class EmailsController < ApplicationController
 
   def show
     @email = Email.find(params[:id])
+    @email.update(read: true) if @email.read == false
     respond_to do |format|
       format.html { }
       format.js { }
+    end
+
+    def update
+      @email = Email.fin(params[:id])
+      respond_to
     end
   end
     

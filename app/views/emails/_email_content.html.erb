@@ -2,6 +2,6 @@
 <p class="list-group-item"><%= email.body %></p>
 
 <div class="row">
-  <%= button_to  "Delete", email, class:"btn btn-outline-danger ml-4 mr-1", method: 'delete', remote: true, data: {confirm: "Are you sure ??"} %>
-  <%= button_to  "Mark as unread", email, class:"btn btn-outline-info disabled mx-1", method: 'post', remote: true %>
+  <%= button_to "Delete", email, class:"btn btn-outline-danger ml-4 mr-1", method: 'delete', remote: true, data: {confirm: "Are you sure ??"} %>
+  <%= button_to "#{ email.read ? 'Mark as unread' : 'Marks as read' }", email, class:"btn btn-outline-info mx-1", method: 'post', remote: true %>
 </div>

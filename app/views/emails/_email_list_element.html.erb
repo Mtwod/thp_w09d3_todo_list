@@ -1,1 +1,1 @@
-<%= link_to "id #{email.id} : #{email.object}", email, class: "list-group-item list-group-item-action", id: "email-#{email.id}", remote: true %>
+<%= link_to "id #{email.id} : #{email.object}", email, class: "list-group-item list-group-item-action #{ email.read ? '' : 'font-weight-bold'}", id: "email-#{email.id}", remote: true %>
