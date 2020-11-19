@@ -12,11 +12,11 @@ class EmailsController < ApplicationController
     if @email.save
       respond_to do |format|
         format.html do
+          flash[:success] = "Email received with success !"
           redirect_to emails_path 
         end
         format.js { }
       end
-      flash[:success] = "Email received with success !"
     else
       flash[:danger] = "Couldn't create !"
       redirect_to emails_path
